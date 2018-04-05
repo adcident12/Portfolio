@@ -1,0 +1,18 @@
+version: "2"
+services:
+  nginx:
+      build:
+          context: ./nginx
+      ports:
+          - "8081:80"
+      volumes:
+          - ./CodeIgniter:/var/app/public
+  fpm:
+      build:
+          context: ./fpm
+      volumes:
+          - ./CodeIgniter:/var/app/public
+      expose:
+          - "9000"
+    
+      
