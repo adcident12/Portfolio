@@ -90,10 +90,10 @@
         <hr class="star-light mb-5">
         <div class="row">
           <div class="col-lg-4 ml-auto">
-            <p class="lead"></p>
+            <p class="lead">รักในการเขียนเว็ป สนใจงานเกี่ยวกับ Web Developer, Desing UX/UI, Programmer</p>
           </div>
           <div class="col-lg-4 mr-auto">
-            <p class="lead"></p>
+            <p class="lead">ต้องการเก็บประสบการณ์เพื่อพัฒนาตนเอง สนใจการค้นหาสิ่งใหม่ๆ</p>
           </div>
         </div>
       </div>
