@@ -22,9 +22,16 @@ class User_model extends CI_Model {
             return false;
         }
 
-        public function gets_staff()
+        public function gets_profile()
         {
-            $this->db->from('Staff');
+            $this->db->from('profile');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
+
+        public function gets_computer_skill()
+        {
+            $this->db->from('Computer_skill');
             $query = $this->db->get();
             return $query->result_array();
         }

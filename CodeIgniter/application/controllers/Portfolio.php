@@ -20,9 +20,26 @@ class Portfolio extends CI_Controller {
 		$student_id = "57660135";
 		$this->load->model('User_model');
 		$data['profile'] = $this->User_model->get_student_data_from_profile($student_id);
-		$data['staff'] = $this->User_model->gets_staff();
-		print_r($data);
-		$this->template->view('Home_view', $data);
+		$this->load->model('Working_goal_model');
+		$data['working_goal'] = $this->Working_goal_model->gets();
+		$this->load->model('Strengths_model');
+		$data['strengths'] = $this->Strengths_model->gets();
+		$this->load->model('Work_required_model');
+		$data['salary'] = $this->Work_required_model->gets_Salary();
+		$data['work'] = $this->Work_required_model->gets_Work();
+		$data['working_area'] = $this->Work_required_model->gets_Working_area();
+		$this->load->model('Computer_skill_model');
+		$this->load->model('Catarogy_skill_model');
+		$data['data'] = array();
+		foreach ($this->Catarogy_skill_model->gets() as $row)
+		{
+			$tmp_array = array();
+			$tmp_array['catarogy_skills'] = $row;
+			$tmp_array['computer_skill'] = $this->Computer_skill_model->get_by_id($row['Catarogy_skill_id']);
+			array_push($data['data'],$tmp_array);
+		}
+		 	// print_r($data);
+			$this->template->view('Home_view', $data);
 	}
 
 	public function notifi()
@@ -34,7 +51,7 @@ class Portfolio extends CI_Controller {
 		$email = $this->input->post('email');
 		$phone = $this->input->post('phone');
 		$message = $this->input->post('message');
-		$date = date('Y-m-d:H:i:s');
+		$date = date('Y-m-d H:i:s');
 
 		$str = "ปี-เดือน-วัน: ".$date." ชื่อผู้ส่ง: ".$name." เบอร์โทรศัพท์: ".$phone." ข้อความ: ".$message;
 		
@@ -50,5 +67,6 @@ class Portfolio extends CI_Controller {
 		
 
 	}
+
 
 }

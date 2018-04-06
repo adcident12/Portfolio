@@ -158,25 +158,42 @@
         </a>
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-9 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">ข้อมูลส่วนตัว</h2>
               <hr class="star-dark mb-5">
               <img class="img-fluid mb-5" src="">
-                <p class="mb-3">
-                    <B>ชื่อ-นามสกุล(TH): </B><?php echo $profile['Student_Prefix']."".$profile['Student_Name_Th']." ".$profile['Student_Lname_Th']; ?>
-                </p>
-                <p class="mb-3">
-                    <B>ชื่อ-นามสกุล(EN): </B><?php echo detect_prefix_en($profile['Student_Prefix'])."".$profile['Student_Name_Eng']." ".$profile['Student_Lname_Eng']; ?>
-                </p>
-                <p class="md-3">
-                    <B>วัน/เดือนปี/เกิด: </B><?php echo thaiDate($profile['Birthday'],false,false); ?>
-                </p>
-                <p class="md-3">
-                    <B>เบอร์โทร: </B> 092-738-1976
-                </p>
-                <p class="md-3">
-                    <B>Email: </B> santikon12@gmail.com 
-                </p>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="text-left">ชื่อ-นามสกุล(TH)</td>
+                      <td class="text-left"><?php echo $profile['Student_Prefix']."".$profile['Student_Name_Th']." ".$profile['Student_Lname_Th']; ?></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">ชื่อ-นามสกุล(EN)</td>
+                      <td class="text-left"><?php echo detect_prefix_en($profile['Student_Prefix'])."".$profile['Student_Name_Eng']." ".$profile['Student_Lname_Eng']; ?></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">วัน/เดือนปี/เกิด</td>
+                      <td class="text-left"><?php echo thaiDate($profile['Birthday'],false,false); ?></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">เบอร์โทร</td>
+                      <td class="text-left">092-738-1976</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">Email</td>
+                      <td class="text-left">santikon12@gmail.com</td>
+                    </tr>
+                  </tbody>
+                </table>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
                 Close</a>
@@ -194,28 +211,54 @@
         </a>
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-9 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">ประวัติการศึกษา</h2>
               <hr class="star-dark mb-5">
               <img class="img-fluid mb-5" src="" alt="">
-              <p class="mb-3">
-                  <B>มหาวิทยาลัย(TH): </B>มหาวิทยาลัยวิทยาบูรพา
-              </p>
-              <p class="mb-3">
-                  <B>มหาวิทยาลัย(EN): </B>Burapha University
-              </p>
-              <p class="mb-3">
-                  <B>คณะ: </B>วิทยาการสารสนเทศ
-              </p>
-              <p class="mb-3">
-                  <B>สาขา: </B><?php echo $profile['Faculty_Name']; ?>
-              </p>
-              <p class="mb-3">
-                  <B>ปริญาบัตร: </B><?php echo $profile['Degree']; ?>
-              </p>
-              <p class="mb-3">
-                  <B>สถานะ: </B><font color=“#00CC00”><?php echo $profile['Status_Name']; ?></font>
-              </p>
+              <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="text-left">มหาวิทยาลัย(TH)</td>
+                      <td class="text-left">มหาวิทยาลัยวิทยาบูรพา</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">มหาวิทยาลัย(EN)</td>
+                      <td class="text-left">Burapha University</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">คณะ</td>
+                      <td class="text-left">วิทยาการสารสนเทศ</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">สาขา</td>
+                      <td class="text-left"><?php echo $profile['Faculty_Name']; ?></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">GPAX</td>
+                      <td class="text-left"><?php echo $profile['GPAX']; ?></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">ปริญาบัตร</td>
+                      <td class="text-left"><?php echo $profile['Degree']; ?></td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td class="text-left">สถานะ</td>
+                      <td class="text-left"><font color=“#00CC00”><?php echo $profile['Status_Name']; ?></font></td>
+                    </tr>
+                  </tbody>
+                </table>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
                 Close</a>
@@ -233,11 +276,40 @@
         </a>
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-9 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">ทักษะคอมพิวเตอร์และอื่นๆ</h2>
               <hr class="star-dark mb-5">
               <img class="img-fluid mb-5" src="" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              <ul class="nav nav-tabs" role="tablist">
+               <?php foreach($data as $row) { ?>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#<?php echo $row['catarogy_skills']['Catarogy_skill_id'];?>" role="tab" aria-controls="home"><?php echo $row['catarogy_skills']['Catarogy_skill_name'];?></a>
+                  </li>
+               <?php } ?>
+              </ul>
+                <div class="tab-content">
+                  <?php foreach($data as $row) { ?>                                    
+                    <div class="tab-pane" id="<?php echo $row['catarogy_skills']['Catarogy_skill_id'];?>" role="tabpanel">
+                                    
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <td></td>
+                            <td>ทักษะ</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $i=1; foreach($row['computer_skill'] as $result) {?>
+                            <tr>
+                              <td class="text-center"><?php echo $i++; ?></td>
+                              <td class="text-left"><?php echo $result['Computer_skill_name']; ?></td>   
+                            </tr>
+                          <?php } ?>  
+                        </tbody>                       
+                      </table>
+                    </div>
+                  <?php } ?>
+                </div>      
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
                 Close</a>
@@ -255,11 +327,26 @@
         </a>
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-9 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">เป้าหมายในการทำงาน</h2>
               <hr class="star-dark mb-5">
               <img class="img-fluid mb-5" src="" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <td>ข้อมูล</td>
+                    </tr>     
+                  </thead>
+                  <tbody>
+                   <?php $i=1; foreach($working_goal as $row) { ?>
+                    <tr>
+                      <td class="text-center"><?php echo $i++; ?></td>
+                      <td class="text-left"><?php echo $row['Working_goal_name'];?></td>
+                    </tr>
+                   <?php } ?>
+                  </tbody>
+                </table>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
                 Close</a>
@@ -277,11 +364,52 @@
         </a>
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">The TOPGUN's Strengths©</h2>
+            <div class="col-lg-9 mx-auto">
+              <h2 class="text-secondary text-uppercase mb-0">งานที่ต้องการ</h2>
               <hr class="star-dark mb-5">
               <img class="img-fluid mb-5" src="" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <td class="text-center">เงินเดือน</td>
+                    </tr>     
+                  </thead>
+                  <tbody>
+                   <?php $i=1; foreach($salary as $row) { ?>
+                    <tr>
+                      <td class="text-left"><?php echo $row['Salary_name'];?></td>
+                    </tr>
+                   <?php } ?>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                    <td class="text-center">สายงาน</td>
+                    </tr>     
+                  </thead>
+                  <tbody>
+                   <?php $i=1; foreach($work as $row) { ?>
+                    <tr>
+                      <td class="text-left"><?php echo $row['Work_name'];?></td>
+                    </tr>
+                   <?php } ?>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                    <td class="text-center">พื้นที่ทำงาน</td>
+                    </tr>     
+                  </thead>
+                  <tbody>
+                   <?php $i=1; foreach($working_area as $row) { ?>
+                    <tr>
+                      <td class="text-left"><?php echo $row['Working_area_name'];?></td>
+                    </tr>
+                   <?php } ?>
+                  </tbody>
+                </table>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
                 Close</a>
@@ -299,11 +427,26 @@
         </a>
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">The TOPGUN's Aptitude©</h2>
+            <div class="col-lg-9 mx-auto">
+              <h2 class="text-secondary text-uppercase mb-0">The TOPGUN's Strengths©</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/submarine.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+              <img class="img-fluid mb-5" src="" alt="">
+              <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <td>ข้อมูล</td>
+                    </tr>     
+                  </thead>
+                  <tbody>
+                   <?php $i=1; foreach($strengths as $row) { ?>
+                    <tr>
+                      <td class="text-center"><?php echo $i++; ?></td>
+                      <td class="text-left"><?php echo $row['Strengths_name'];?></td>
+                    </tr>
+                   <?php } ?>
+                  </tbody>
+                </table>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
                 Close</a>
@@ -312,3 +455,11 @@
         </div>
       </div>
     </div>
+<script>
+$(document).ready(function(){
+    jQuery(".nav-link[href='#1']").click()
+});
+</script>
+
+
+    
