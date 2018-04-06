@@ -21,4 +21,11 @@ class User_model extends CI_Model {
             
             return false;
         }
+
+        public function gets_staff()
+        {
+            $this->db->from('Staff');
+            $query = $this->db->get();
+            return $query->result_array();
+        }
 }

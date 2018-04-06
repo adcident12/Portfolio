@@ -20,6 +20,8 @@ class Portfolio extends CI_Controller {
 		$student_id = "57660135";
 		$this->load->model('User_model');
 		$data['profile'] = $this->User_model->get_student_data_from_profile($student_id);
+		$data['staff'] = $this->User_model->gets_staff();
+		print_r($data);
 		$this->template->view('Home_view', $data);
 	}
 
