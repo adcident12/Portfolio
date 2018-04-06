@@ -14,5 +14,20 @@ services:
           - ./CodeIgniter:/var/app/public
       expose:
           - "9000"
-    
-      
+      environment:
+          - "DB_HOST=db"
+          - "DB_DATABASE=laravel"
+  db:
+      image: mariadb
+      environment:
+          - MYSQL_ROOT_PASSWORD=root
+          - MYSQL_DATABASE=laravel
+      volumes:
+          - ./database:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+     - PMA_HOST=db
+    ports:
+     - 8999:80
