@@ -51,9 +51,9 @@ class Portfolio extends CI_Controller {
 		$email = $this->input->post('email');
 		$phone = $this->input->post('phone');
 		$message = $this->input->post('message');
-		$date = date('Y-m-d H:i:s');
+		$date = date('Y-m-d');
 
-		$str = "ปี-เดือน-วัน: ".$date." ชื่อผู้ส่ง: ".$name." เบอร์โทรศัพท์: ".$phone." ข้อความ: ".$message;
+		$str = "ปี-เดือน-ปี: ".$date." ชื่อผู้ส่ง: ".$name." เบอร์โทรศัพท์: ".$phone." ข้อความ: ".$message;
 		
 		$message_data = array(
 		'message' => $str,
